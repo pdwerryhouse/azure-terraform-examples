@@ -32,7 +32,8 @@ module "network" {
 }
 
 module "compute" {
-  count = 0
+  count = var.use_compute_module ? 1 : 0
+
   source = "../../modules/compute"
 
   env             = var.env
@@ -48,7 +49,8 @@ module "compute" {
 }
 
 module "database" {
-  count = 1
+  count = var.use_database_module ? 1 : 0
+
   source = "../../modules/database"
 
   env             = var.env

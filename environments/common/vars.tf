@@ -10,3 +10,5 @@ variable "env" { }
 variable "location" { }
 variable "name" { }
 variable "ssh_key_file" { }
+variable "use_compute_module" { default = true }
+variable "use_database_module" { default = true }
